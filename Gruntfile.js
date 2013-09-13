@@ -32,46 +32,37 @@ module.exports = function(grunt) {
       "// Licensed under <%= pkg.license %> (see LICENSE-MIT) \n\n",
     
     concat: {
-      options: {
-        banner: "<%= banner %>",
-        stripBanners: true
+      helio: {
+        src: [
+          "src/helio/start.js",
+          "src/helio/end.js"
+          ],
+        dest: "build/helio.js"
+      },
+      hilo: {
+        src: [
+          "src/hilo/start.js",
+          "src/hilo/end.js"
+        ],
+        dest: "build/hilo.js"
+      },
+      easio: {
+        src: [
+          "src/easio/start.js",
+          "src/easio/end.js"
+        ],
+        dest: "build/easio.js"
       },
       dist: {
+        options: {
+          banner: "<%= banner %>",
+          stripBanners: true
+        },
         src: [
-          "src/start.js",
-          "src/detect.js",
-          "src/polyfill.js",
-          "src/util.js",
-          "src/core.js",
-          "src/test.js",
-          "src/ajax.js",
-          "src/dom.js",
-          "src/evt.js",
-          "src/fx.js",
-          "src/misc.js",
-          "src/more.js",
-          "src/end.js"
-          ],
-        dest: "build/<%= pkg.name %>.js"
-      },
-      legacy: {
-        src: [
-          "src/start.js",
-          "src/detect.js",
-          "src/polyfill.js",
-          "src/sizzle.js",
-          "src/util.js",
-          "src/legacy.js",
-          "src/core.js",
-          "src/test.js",
-          "src/ajax.js",
-          "src/dom.js",
-          "src/evt.js",
-          "src/fx.js",
-          "src/misc.js",
-          "src/more.js",
-          "src/end.js"
-          ],
+          "build/helio.js",
+          "build/hilo.js",
+          "build/easio.js"
+        ],
         dest: "build/<%= pkg.name %>-legacy.js"
       },
       release: {
