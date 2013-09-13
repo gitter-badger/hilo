@@ -7,3 +7,4 @@ _SpecRunner.html
 junit/*
 build/rls
 *.sublime-*
+src/..js
