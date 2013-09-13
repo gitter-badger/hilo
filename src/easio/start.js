@@ -13,4 +13,16 @@
   } else {
     M[A] = D();
   }
-}("Easel", this, function () {
+}("Easio", this, function () {
+
+  var 
+      // Measure performance
+      perf = new Date().getTime,
+
+      // Main Easio Function
+      Easio,
+
+      // Referenced to window and document
+      win = this.window,
+      doc = win.document;
+  
