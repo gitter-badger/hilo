@@ -71,10 +71,19 @@ module.exports = function(grunt) {
       }
     },
     uglify: {
+      helio: {
+        files: {
+          "build/helio.min.js" : ["build/helio.js"]
+        }
+      },
       hilo: {
         files: {
-          "build/<%= pkg.name %>.min.js" : ["build/<%= pkg.name %>.js"],
-          "build/<%= pkg.name %>-legacy.min.js" : ["build/<%= pkg.name %>-legacy.js"]
+          "build/hilo.min.js" : ["build/hilo.js"]
+        }
+      },
+      easio: {
+        files: {
+          "build/easio.min.js" : ["build/easio.js"]
         }
       }
     },
@@ -108,11 +117,14 @@ module.exports = function(grunt) {
       gruntfile: {
         src: "Gruntfile.js"
       },
-      hilo: {
-        src: "build/<%= pkg.name %>.js"
+      helio: {
+        src: "build/helio.js"
       },
-      hiloLegacy: {
-        src: "build/<%= pkg.name %>-legacy.js"
+      hilo: {
+        src: "build/hilo.js"
+      },
+      easio: {
+        src: "build/easio.js"
       }
     },
     watch: {
