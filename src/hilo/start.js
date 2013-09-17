@@ -14,3 +14,6 @@
     M[A] = D();
   }
 }("Hilo", this, function () {
+
+  
+  var Hilo = {};
