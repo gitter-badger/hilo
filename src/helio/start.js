@@ -14,3 +14,7 @@
     M[A] = D();
   }
 }("Helio", this, function () {
+
+  var Helio = function Helio (o) {
+    this.o = o;
+  };

@@ -15,6 +15,8 @@
   }
 }("Easio", this, function () {
 
+  /*jshint -W098*/
+
   var 
       // Measure performance
       perf = new Date().getTime,
