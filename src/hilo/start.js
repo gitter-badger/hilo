@@ -34,6 +34,15 @@
      * @since 0.1.0
      */
     version: 0.1,
+    
+    /**
+     * Version in string
+     * 
+     * @property
+     * @for Hilo
+     * @type string
+     * @since 0.1.0
+     */
     versionStr: "0.1.0",
     versionPrecise: "0.1.0-pre-dev-beta-10"
   };
