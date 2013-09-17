@@ -28,7 +28,7 @@
     /**
      * Version number
      * 
-     * @property
+     * @property version
      * @for Hilo
      * @type number
      * @since 0.1.0
@@ -38,7 +38,7 @@
     /**
      * Version in string
      * 
-     * @property
+     * @property versionStr
      * @for Hilo
      * @type string
      * @since 0.1.0
