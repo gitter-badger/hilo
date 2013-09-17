@@ -15,5 +15,12 @@
   }
 }("Hilo", this, function () {
 
-  
+  /**
+   * The main Hilo object
+   * 
+   * @static
+   * @class Hilo
+   * @author Erik Royall <erikroyall@hotmail.com>
+   * @since 0.1.0
+   */
   var Hilo = {};
