@@ -35,6 +35,7 @@ module.exports = function(grunt) {
       helio: {
         src: [
           "src/helio/start.js",
+          "src/helio/object.js",
           "src/helio/end.js"
           ],
         dest: "build/helio.js"
@@ -63,7 +64,7 @@ module.exports = function(grunt) {
           "build/hilo.js",
           "build/easio.js"
         ],
-        dest: "build/<%= pkg.name %>-legacy.js"
+        dest: "build/helio-hilo-easio.js"
       },
       release: {
         src: "<%= concat.dist.src %>",
@@ -89,7 +90,7 @@ module.exports = function(grunt) {
     },
     jasmine: {
       options: {
-        helpers: "build/hilo.js"
+        helpers: "build/helio-hilo-easio.js"
       },
       hilo: {
         src: "test/spec/**/*.spec.js"
@@ -130,11 +131,29 @@ module.exports = function(grunt) {
     watch: {
       gruntfile: {
         files: "<%= jshint.gruntfile.src %>",
-        tasks: ["jshint:gruntfile", "concat:dist", "concat:legacy", "yuidoc", "uglify:hilo", "jshint:hilo", "jshint:hiloLegacy", "jasmine:hilo"]
+        tasks: [
+          "concat:helio",
+          "concat:hilo",
+          "concat:easio",
+          "concat:dist",
+          "uglify",
+          "jshint",
+          "jasmine",
+          "watch"
+        ]
       },
       hilo: {
         files: "<%= concat.dist.src %>",
-        tasks: ["concat:dist", "concat:legacy", "yuidoc", "uglify:hilo", "jshint:hilo", "jshint:hiloLegacy", "jasmine:hilo"]
+        tasks: [
+          "concat:helio",
+          "concat:hilo",
+          "concat:easio",
+          "concat:dist",
+          "uglify",
+          "jshint",
+          "jasmine",
+          "watch"
+        ]
       }
     },
     yuidoc: {
@@ -160,7 +179,15 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-jasmine");
 
   
-  grunt.registerTask("default", ["concat:dist", "concat:legacy", "yuidoc", "uglify:hilo", "jasmine:hilo", "jshint", "watch"]);
-  grunt.registerTask("release", ["concat:release", "yuidoc"]);
+  grunt.registerTask("default", [
+    "concat:helio",
+    "concat:hilo",
+    "concat:easio",
+    "concat:dist",
+    "uglify",
+    "jshint",
+    "jasmine",
+    "watch"
+  ]);
 
 };
