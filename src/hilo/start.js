@@ -24,6 +24,15 @@
    * @since 0.1.0
    */
   var Hilo = {
+
+    /**
+     * Version number
+     * 
+     * @property
+     * @for Hilo
+     * @type number
+     * @since 0.1.0
+     */
     version: 0.1,
     versionStr: "0.1.0",
     versionPrecise: "0.1.0-pre-dev-beta-10"
