@@ -34,5 +34,5 @@
     each: each,
     forEach: each,
     own: own,
-    extend
+    extend: extend
   });
