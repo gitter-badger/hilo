@@ -56,10 +56,32 @@
       return doc.getElementsByTagName(tagName);
     }
 
+    // Validation methods
+
+    // dom.hasAttribute
+    // Check if an element has an attribute
+    // optionally check if it has a value
+
+    /**
+     * Check if an element has an attribute
+     * Optionally check if it has a value equal to the given
+     * 
+     * @for dom
+     * @method hasAttribute
+     * @param String Name of attribute to check for
+     * @param {String|Number} Optional value
+     * @return bool Whether test is passed
+     * @since 0.1.0
+     */
+    function hasAttribute (el, attr, value) {
+      return value ? el[attr] === value : el[attr];
+    }
+
     // return as object
     return {
       getById: getById,
       getByClassName: getByClassName,
-      getByTagName: getByTagName
+      getByTagName: getByTagName,
+      hasAttribute: hasAttribute
     };
   }());
