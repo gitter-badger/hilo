@@ -115,13 +115,47 @@
       return value ? el[attr] === value : el[attr];
     }
 
+    // Properties
+
+    // Get the baseURI of an element
+    function getBaseURI (el) {
+      return el.baseURI || document.URL;
+    }
+
+    // Manipulation
+
+    // Get innerHTML of an element
+    function getInnerHTML (el) {
+      return el.innerHTML;
+    }
+
+    // Set innerHTML of an element
+    function setInnerHTML (el, html) {
+      el.innerHTML = html;
+
+      return el;
+    }
+
+    // Remove all child elements
+    function killChildren (el) {
+      Helio.each(el.children, function (child) {
+        child.parent.removeChild(child);
+      });
+
+      return el;
+    }
+
     // return as object
     return {
       getById: getById,
       getByClassName: getByClassName,
       getByTagName: getByTagName,
       getByAttribute: getByAttribute,
-      hasAttribute: hasAttribute
+      hasAttribute: hasAttribute,
+      getBaseURI: getBaseURI,
+      getInnerHTML: getInnerHTML,
+      setInnerHTML: setInnerHTML,
+      killChildren: killChildren
     };
   }());
 
