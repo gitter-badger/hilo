@@ -55,7 +55,9 @@
      * @since 0.1.0
      */
     function getByTagName (tagName) {
-      return doc.getElementsByTagName(tagName);
+      var els = doc.getElementsByTagName(className);
+      
+      return els.length > 0 ? els : [];
     }
 
     // dom.getByAttribute
