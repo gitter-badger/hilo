@@ -23,7 +23,10 @@
    * @author Erik Royall <erikroyall@hotmail.com>
    * @since 0.1.0
    */
-  var Hilo = {
+  var Hilo = {}
+    , Helio = Helio || this.Helio;
+
+  Helio.extend(Hilo, {
 
     /**
      * Version number
@@ -54,4 +57,4 @@
      * @since 0.1.0
      */
     versionPrecise: "0.1.0-pre-dev-beta-10"
-  };
+  });
