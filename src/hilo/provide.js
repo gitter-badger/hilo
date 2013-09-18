@@ -1,4 +1,4 @@
   
-  extend(Hilo, {
+  Helio.extend(Hilo, {
     dom: dom
   });
