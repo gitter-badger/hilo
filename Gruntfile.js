@@ -43,6 +43,7 @@ module.exports = function(grunt) {
       hilo: {
         src: [
           "src/hilo/start.js",
+          "src/hilo/dom.js",
           "src/hilo/end.js"
         ],
         dest: "build/hilo.js"
@@ -142,8 +143,34 @@ module.exports = function(grunt) {
           "watch"
         ]
       },
+      helio: {
+        files: "<%= concat.helio.src %>",
+        tasks: [
+          "concat:helio",
+          "concat:hilo",
+          "concat:easio",
+          "concat:dist",
+          "uglify",
+          "jshint",
+          "jasmine",
+          "watch"
+        ]
+      },
       hilo: {
-        files: "<%= concat.dist.src %>",
+        files: "<%= concat.hilo.src %>",
+        tasks: [
+          "concat:helio",
+          "concat:hilo",
+          "concat:easio",
+          "concat:dist",
+          "uglify",
+          "jshint",
+          "jasmine",
+          "watch"
+        ]
+      },
+      easio: {
+        files: "<%= concat.easio.src %>",
         tasks: [
           "concat:helio",
           "concat:hilo",
