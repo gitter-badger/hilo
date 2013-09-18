@@ -34,16 +34,16 @@
     return false;
   };
 
-  var extend = function extend (o, ao) {
+  var extend = function extend (obj, ext) {
     var _i;
 
-    for (_i in ao) {
-      if (own(ao, _i)) {
-        o[_i] = ao[_i];
+    for (_i in ext) {
+      if (ext.hasOwnProperty(_i)) {
+        obj[_i] = ext[_i];
       }
     }
 
-    return o;
+    return obj;
   };
 
   extend(Helio, {
