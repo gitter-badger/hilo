@@ -91,7 +91,9 @@
    * @since 0.1.0
    */
   var Hilo = {}
-    , Helio = Helio || this.Helio;
+    , Helio = Helio || this.Helio
+    , win = window
+    , doc = win.document;
 
   Helio.extend(Hilo, {
 
@@ -190,6 +192,10 @@
       getByTagName: getByTagName
     };
   }());
+  
+  extend(Hilo, {
+    dom: dom
+  });
   
   return Hilo;
 
