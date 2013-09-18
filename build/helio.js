@@ -39,10 +39,8 @@
 
     for (_i in ao) {
       if (!own(ao, _i)) {
-        continue;
+        o[_i] = ao[_i];
       }
-
-      o[_i] = ao[_i];
     }
 
     return o;
