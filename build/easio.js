@@ -15,18 +15,6 @@
   }
 }("Easio", this, function () {
 
-  /*jshint -W098*/
-
-  var 
-      // Measure performance
-      perf = new Date().getTime,
-
-      // Main Easio Function
-      Easio,
-
-      // Referenced to window and document
-      win = this.window,
-      doc = win.document;
   
 
 }));

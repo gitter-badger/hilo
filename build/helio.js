@@ -15,9 +15,7 @@
   }
 }("Helio", this, function () {
 
-  var Helio = function Helio (o) {
-    this.o = o;
-  };
+  var Helio = {};
   
   var each = function each (o, fn) {
     var _i = 0
@@ -54,7 +52,7 @@
     each: each,
     forEach: each,
     own: own,
-    extend
+    extend: extend
   });
   
   return Helio;
