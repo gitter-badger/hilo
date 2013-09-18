@@ -44,6 +44,7 @@ module.exports = function(grunt) {
         src: [
           "src/hilo/start.js",
           "src/hilo/dom.js",
+          "src/hilo/provide.js",
           "src/hilo/end.js"
         ],
         dest: "build/hilo.js"
