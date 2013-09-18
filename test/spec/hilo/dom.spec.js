@@ -5,5 +5,11 @@ describe("Hilo.dom", function () {
 
       expect(Hilo.dom.getById("someID")[0]).toEqual(document.getElementById("someID"));
     });
+    it("shoud return an array with null when no id is passed", function () {
+      expect(Hilo.dom.getById()).toEqual([null]);
+    });
+    it("should return an array with null when empty string is passed", function () {
+      expect(Hilo.dom.getById("")).toEqual([null]);
+    });
   });
 });
