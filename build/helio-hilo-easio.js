@@ -280,11 +280,19 @@
       getByClassName: getByClassName,
       getByTagName: getByTagName,
       getByAttribute: getByAttribute,
+      getByIdOf: getById,
+      getByClassNameOf: getByClassName,
+      getByTagNameOf: getByTagName,
+      getByAttributeOf: getByAttribute,
       hasAttribute: hasAttribute,
       getBaseURI: getBaseURI,
       getInnerHTML: getInnerHTML,
       setInnerHTML: setInnerHTML,
-      killChildren: killChildren
+      killChildren: killChildren,
+      getBaseURIOf: getBaseURI,
+      getInnerHTMLOf: getInnerHTML,
+      setInnerHTMLOf: setInnerHTML,
+      killChildrenOf: killChildren
     };
   }());
 
