@@ -36,7 +36,7 @@
   };
 
   var own = function (o, p) {
-    if (o.hasOwnProperty(o)) {
+    if (o.hasOwnProperty(p)) {
       return true;
     }
 
@@ -47,11 +47,9 @@
     var _i;
 
     for (_i in ao) {
-      if (!own(ao, _i)) {
-        continue;
+      if (own(ao, _i)) {
+        o[_i] = ao[_i];
       }
-
-      o[_i] = ao[_i];
     }
 
     return o;
