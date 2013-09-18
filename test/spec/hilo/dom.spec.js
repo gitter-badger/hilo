@@ -13,16 +13,27 @@ describe("Hilo.dom", function () {
     });
   });
   describe(".getByClassName", function () {
-    it("should get elements by id", function () {
+    it("should get elements by className", function () {
       document.body.className += " someClass";
 
       expect(Hilo.dom.getByClassName("someClass")).toEqual(document.getElementsByClassName("someClass"));
     });
-    it("shoud return an empty array with null when no id is passed", function () {
+    it("shoud return an empty array with null when no className is passed", function () {
       expect(Hilo.dom.getByClassName()).toEqual({ length: 0 });
     });
     it("should return an empty array when empty string is passed", function () {
       expect(Hilo.dom.getByClassName("")).toEqual({ length: 0 });
+    });
+  });
+  describe(".getByTagName", function () {
+    it("should get elements by tag name", function () {
+      expect(Hilo.dom.getByTagName("div")).toEqual(document.getElementsByTagName("div"));
+    });
+    it("shoud return an empty array with null when no tag name is passed", function () {
+      expect(Hilo.dom.getByTagName()).toEqual({ length: 0 });
+    });
+    it("should return an empty array when empty string is passed", function () {
+      expect(Hilo.dom.getByTagName("")).toEqual({ length: 0 });
     });
   });
 });
