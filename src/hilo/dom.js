@@ -124,3 +124,8 @@
       hasAttribute: hasAttribute
     };
   }());
+
+  // Provide the DOM methods
+  Helio.extend(Hilo, {
+    dom: dom
+  });
