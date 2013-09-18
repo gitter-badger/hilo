@@ -1,0 +1,4 @@
+  
+  extend(Hilo, {
+    dom: dom
+  });
