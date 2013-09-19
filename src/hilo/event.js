@@ -26,6 +26,7 @@
       if (typeof doc.addEventListener === "function") {
         return function (el, evt, fn) {
           el.addEventListener(evt, fn, false);
+          handlers[el] = handlers[el] || {};
           handlers[el][evt] = handlers[el][evt] || [];
           handlers[el][evt].push(fn);
 
@@ -33,12 +34,14 @@
       } else if (typeof doc.attachEvent === "function") {
         return function (el, evt, fn) {
           el.attachEvent(evt, fn);
+          handlers[el] = handlers[el] || {};
           handlers[el][evt] = handlers[el][evt] || [];
           handlers[el][evt].push(fn);
         };
       } else {
         return function (el, evt, fn) {
           el["on" + evt] = fn;
+          handlers[el] = handlers[el] || {};
           handlers[el][evt] = handlers[el][evt] || [];
           handlers[el][evt].push(fn);
         };
@@ -52,6 +55,8 @@
           el.removeEventListener(evt, fn, false);
           Helio.each(handlers[el][evt], function (fun) {
             if (fun === fn) {
+              handlers[el] = handlers[el] || {};
+              handlers[el][evt] = handlers[el][evt] || [];
               handlers[el][evt][handlers[el][evt].indexOf(fun)] = undefined;
             }
           });
@@ -62,6 +67,8 @@
           el.detachEvent(evt, fn);
           Helio.each(handlers[el][evt], function (fun) {
             if (fun === fn) {
+              handlers[el] = handlers[el] || {};
+              handlers[el][evt] = handlers[el][evt] || [];
               handlers[el][evt][handlers[el][evt].indexOf(fun)] = undefined;
             }
           });
@@ -71,6 +78,8 @@
           el["on" + evt] = undefined;
           Helio.each(handlers[el][evt], function (fun) {
             if (fun === fn) {
+              handlers[el] = handlers[el] || {};
+              handlers[el][evt] = handlers[el][evt] || [];
               handlers[el][evt][handlers[el][evt].indexOf(fun)] = undefined;
             }
           });
@@ -80,6 +89,8 @@
 
     // triggerEvent
     function triggerEvent (el, evt) {
+      handlers[el] = handlers[el] || {};
+      handlers[el][evt] = handlers[el][evt] || [];
       Helio.each(handlers[el][evt], function (fn) {
         fn();
       });
