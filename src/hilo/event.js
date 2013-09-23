@@ -1,7 +1,8 @@
   
   /**
    * @static
-   * @class dom
+   * @class event
+   * @module event
    * @for Hilo
    */
   var event = (function () {
@@ -22,6 +23,17 @@
     var handlers = {};
 
     // addEvent
+    /**
+     * Add (attach) an event listener to an element
+     * 
+     * @for event
+     * @method addEvent
+     * @param {HTMLElement} el The element to attach an event handler to
+     * @param {String} evt Name of event to attach
+     * @param {Function} fn Function to be executed on event
+     * @return void
+     * @since 0.1.0
+     */
     var addEvent = (function () {
       if (typeof doc.addEventListener === "function") {
         return function (el, evt, fn) {
