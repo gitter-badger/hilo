@@ -2,6 +2,7 @@
   /**
    * @static
    * @class dom
+   * @module event
    * @for Hilo
    */
   var dom = (function () {
